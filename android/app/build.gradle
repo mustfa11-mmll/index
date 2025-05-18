@@ -45,7 +45,6 @@ android {
 
     defaultConfig {
         applicationId = "net.examnet.semo"
-        minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
