@@ -1,32 +1,31 @@
-name: Flutter Build
+name: Build Flutter App
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-    - name: Install Flutter
+    - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.16.0' # غيّر للإصدار الذي تستعمله
+        flutter-version: '3.19.6' # يمكنك اختيار أي إصدار تريده
 
-    - name: Get dependencies
+    - name: Install dependencies
       run: flutter pub get
 
-    - name: Run build
-      run: flutter build apk --release
+    - name: Build APK
+      run: flutter build apk --debug
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
-        name: release-apk
-        path: build/app/outputs/flutter-apk/app-release.apk
+        name: app-debug.apk
+        path: build/app/outputs/flutter-apk/app-debug.apk
