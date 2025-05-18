@@ -1,4 +1,4 @@
-name: semo
+name: index
 description: "A VOD streaming application"
 version: 1.0.0+1
 
@@ -44,3 +44,10 @@ flutter:
   assets:
     - assets/
     - fonts/
+    dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/Ic_launcher.index # ضع هنا مسار الأيقونة الجديدة
