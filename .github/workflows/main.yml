@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -24,8 +25,8 @@ jobs:
       - name: Build APK
         run: flutter build apk --debug
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v3.1.3
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v2
         with:
           name: app-debug.apk
           path: build/app/outputs/flutter-apk/app-debug.apk
